@@ -28,7 +28,7 @@ function App() {
         </form>
       </div>
 
-      <div className='m-6 p-6 flex flex-col lg:flex-row'>
+      <div className='m-6 p-6 flex flex-col lg:flex-row lg:space-x-20'>
         <div className='lg:basis-1/2'>
           <h2 className='text-center text-2xl uppercase font-bold text-blue-500'>Liste des fluxs</h2>
 
@@ -59,6 +59,21 @@ function App() {
 
         <div className='lg:grow'>
           <h2 className='text-center text-2xl uppercase font-bold text-blue-500'>Statistiques</h2>
+
+          <table className='table-fix w-full border-separate border-spacing-4'>
+            <thead>
+              <th className='w-1/3 text-left text-xl'>Entrées</th>
+              <th className='w-1/3 text-left text-xl'>Sorties</th>
+              <th className='w-1/3 text-left text-xl'>Solde</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td className='bg-green-200 px-4 py-2'>10 000 FCFA</td>
+                <td className='bg-red-200 px-4 py-2'>10 000 FCFA</td>
+                <td className='bg-blue-200 px-4 py-2'>10 000 FCFA</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
