@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = [
-    {id:1, date:"01/01/2022", label:"Retour prêt", type:"in", amount:1000}
-]
+const initialState = []
 
 export const fluxSlice = createSlice({
     name: 'flux',
