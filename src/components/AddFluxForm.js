@@ -9,6 +9,10 @@ const AddFluxForm = () => {
             <input className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96' name='date' type='date' />
           </label>
 
+          <label className='flex flex-col'><span className='font-semibold text-lg mr-4'>Libellé :</span>
+            <input className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96' name='label' type='text' />
+          </label>
+
           <label className='flex flex-col'><span className='font-semibold text-lg mr-4'>Type :</span>
             <select className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96'>
               <option value='in'>Entrée</option>
