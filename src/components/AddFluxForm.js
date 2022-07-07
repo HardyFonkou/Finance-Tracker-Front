@@ -1,30 +1,54 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { addFlux } from '../features/flux/fluxSlice'
 
 const AddFluxForm = () => {
+    const dateRef = useRef()
+    const labelRef = useRef()
+    const typeRef = useRef()
+    const amountRef = useRef()
+    const formRef = useRef()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const newFlux = {
+            date: dateRef.current.value,
+            label: labelRef.current.value,
+            type: typeRef.current.value,
+            amount: parseInt(amountRef.current.value)
+        }
+
+        dispatch(addFlux(newFlux))
+
+        formRef.current.reset()
+    }
+
+    const dispatch = useDispatch()
   return (
     <>
         <h2 className='text-2xl uppercase font-bold text-blue-500'>Nouveau flux</h2>
-        <form className='flex flex-col space-y-4 pt-4 lg:flex-row lg:space-x-20 lg:space-y-0 lg:items-center'>
+        <form ref={formRef} onSubmit={(e) => handleSubmit(e)} className='flex flex-col space-y-4 pt-4 lg:flex-row lg:space-x-20 lg:space-y-0 lg:items-center'>
           <label className='flex flex-col'><span className='font-semibold text-lg mr-4'>Date :</span>
-            <input className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96' name='date' type='date' />
+            <input ref={dateRef} className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96' name='date' type='date' />
           </label>
 
           <label className='flex flex-col'><span className='font-semibold text-lg mr-4'>Libellé :</span>
-            <input className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96' name='label' type='text' />
+            <input ref={labelRef} className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96' name='label' type='text' />
           </label>
 
           <label className='flex flex-col'><span className='font-semibold text-lg mr-4'>Type :</span>
-            <select className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96'>
+            <select ref={typeRef} className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96'>
               <option value='in'>Entrée</option>
               <option value='out'>Sortie</option>
             </select>
           </label>
 
           <label className='flex flex-col'><span className='font-semibold text-lg mr-4'>Montant :</span>
-            <input className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96' name='amount' type='text' />
+            <input ref={amountRef} className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full lg:w-96' name='amount' type='text' />
           </label>
 
-          <button className='mx-auto lg:mx- lg:self-end bg-blue-500 text-white text-lg font-semibold max-w-fit px-4 py-2 hover:bg-blue-600'>Enregistrer</button>
+          <button type='submit' className='mx-auto lg:mx- lg:self-end bg-blue-500 text-white text-lg font-semibold max-w-fit px-4 py-2 hover:bg-blue-600'>Enregistrer</button>
         </form>
     </>
   )
