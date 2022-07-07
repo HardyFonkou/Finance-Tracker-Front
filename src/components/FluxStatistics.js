@@ -1,6 +1,34 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const FluxStatistics = () => {
+    const fluxs = useSelector((state) => state.flux)
+
+    const inAmount = () => {
+        let amount = 0
+        const inFluxs = fluxs.filter(flux => flux.type === "in")
+
+        inFluxs.forEach(flux => {
+            amount += flux.amount
+        });
+
+        return amount
+    }
+
+    const outAmount = () => {
+        let amount = 0
+        const inFluxs = fluxs.filter(flux => flux.type === "out")
+
+        inFluxs.forEach(flux => {
+            amount += flux.amount
+        });
+
+        return amount
+    }
+
+    const solde = () => {
+        return inAmount() - outAmount()
+    }
   return (
     <>
         <h2 className='text-center text-2xl uppercase font-bold text-blue-500'>Statistiques</h2>
@@ -15,9 +43,9 @@ const FluxStatistics = () => {
         </thead>
         <tbody>
             <tr>
-            <td className='bg-green-200 px-4 py-2'>10 000 FCFA</td>
-            <td className='bg-red-200 px-4 py-2'>10 000 FCFA</td>
-            <td className='bg-blue-200 px-4 py-2'>10 000 FCFA</td>
+            <td className='bg-green-200 px-4 py-2'>{inAmount()} FCFA</td>
+            <td className='bg-red-200 px-4 py-2'>{outAmount()} FCFA</td>
+            <td className='bg-blue-200 px-4 py-2'>{solde()} FCFA</td>
             </tr>
         </tbody>
         </table>
