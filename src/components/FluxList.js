@@ -7,7 +7,7 @@ const FluxList = () => {
     <>
         <h2 className='text-center text-2xl uppercase font-bold text-emerald-400'>Liste des fluxs</h2>
 
-        <div className='w-full px-2 my-8 max-h-80' style={{"overflowY": "auto"}}>
+        <div className='w-full px-2 my-8 max-h-80 overflow-auto'>
         <table className='w-full table-auto'>
         <thead>
             <tr>
@@ -24,7 +24,7 @@ const FluxList = () => {
                     <td className='pl-4 py-2'>{flux.date}</td>
                     <td className='pl-4 py-2'>{flux.label}</td>
                     <td className='pl-4 py-2'>{flux.type === "in" ? "Entrée" : flux.type === "out" ? "Sortie" : ""}</td>
-                    <td className='pl-4 py-2'>{flux.amount}</td>
+                    <td className={`${flux.type === "in" ? "text-green-600" : flux.type === "out" ? "text-red-600" : ""} pl-4 py-2`}>{flux.amount}</td>
                 </tr>
             ))}
         </tbody>
