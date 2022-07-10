@@ -7,7 +7,7 @@ const FluxList = () => {
     <>
         <h2 className='text-center text-2xl uppercase font-bold text-emerald-400'>Liste des fluxs</h2>
 
-        <div className='w-full px-2 my-8 max-h-80 overflow-auto'>
+        <div className='w-full px-2 my-8 max-h-80 overflow-y-auto'>
         <table className='w-full table-auto'>
         <thead>
             <tr>
