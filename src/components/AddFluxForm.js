@@ -27,28 +27,28 @@ const AddFluxForm = () => {
     const dispatch = useDispatch()
   return (
     <>
-        <h2 className='text-2xl uppercase font-bold text-blue-500'>Nouveau flux</h2>
-        <form ref={formRef} onSubmit={(e) => handleSubmit(e)} className='flex flex-col space-y-4 pt-4 lg:flex-row lg:space-x-20 lg:space-y-0 lg:items-center'>
+        <h2 className='text-2xl uppercase font-bold text-emerald-400'>Nouveau flux</h2>
+        <form ref={formRef} onSubmit={(e) => handleSubmit(e)} className='flex flex-col space-y-4 pt-4 lg:flex-row lg:space-x-10 lg:space-y-0 lg:items-center text-white'>
           <label className='flex flex-col lg:w-1/5'><span className='font-semibold text-lg mr-4'>Date :</span>
-            <input ref={dateRef} className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full' name='date' type='date' />
+            <input ref={dateRef} className='bg-transparent border border-emerald-400 shadow-sm focus:outline-none focus:border-emerald-500 rounded-md mt-1 px-4 py-2 w-full' name='date' type='date' />
           </label>
 
           <label className='flex flex-col lg:w-1/5'><span className='font-semibold text-lg mr-4'>Libellé :</span>
-            <input ref={labelRef} className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full' name='label' type='text' />
+            <input ref={labelRef} className='bg-transparent border border-emerald-400 shadow-sm focus:outline-none focus:border-emerald-500 rounded-md mt-1 px-4 py-2 w-full' name='label' type='text' />
           </label>
 
           <label className='flex flex-col lg:w-1/5'><span className='font-semibold text-lg mr-4'>Type :</span>
-            <select ref={typeRef} className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full'>
-              <option value='in'>Entrée</option>
-              <option value='out'>Sortie</option>
+            <select ref={typeRef} className='bg-transparent border border-emerald-400 shadow-sm focus:outline-none focus:border-emerald-500 rounded-md mt-1 px-4 py-2 w-full'>
+              <option className='bg-emerald-100 text-slate-600' value='in'>Entrée</option>
+              <option className='bg-emerald-100 text-slate-600' value='out'>Sortie</option>
             </select>
           </label>
 
           <label className='flex flex-col lg:w-1/5'><span className='font-semibold text-lg mr-4'>Montant :</span>
-            <input ref={amountRef} className='border shadow-sm border-slate-300 focus:outline-none focus:border-blue-500 rounded-md mt-1 px-4 py-2 w-full' name='amount' type='text' />
+            <input ref={amountRef} className='bg-transparent border border-emerald-400 shadow-sm focus:outline-none focus:border-emerald-500 rounded-md mt-1 px-4 py-2 w-full' name='amount' type='text' />
           </label>
 
-          <button type='submit' className='mx-auto lg:mx- lg:self-end bg-blue-500 text-white text-lg font-semibold max-w-fit px-4 py-2 hover:bg-blue-600'>Enregistrer</button>
+          <button type='submit' className='mx-auto lg:mx- lg:self-end bg-gradient-to-r from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white text-lg font-semibold max-w-fit px-4 py-2 hover:bg-blue-600'>Enregistrer</button>
         </form>
     </>
   )

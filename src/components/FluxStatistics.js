@@ -31,21 +31,21 @@ const FluxStatistics = () => {
     }
   return (
     <>
-        <h2 className='text-center text-2xl uppercase font-bold text-blue-500'>Statistiques</h2>
+        <h2 className='text-center text-2xl uppercase font-bold text-emerald-400'>Statistiques</h2>
 
-        <table className='table-fix w-full border-separate border-spacing-4'>
+        <table className='table-fix w-full border-separate border-spacing-4 my-8'>
         <thead>
             <tr>
-                <th className='w-1/3 text-left text-xl'>Entrées</th>
-                <th className='w-1/3 text-left text-xl'>Sorties</th>
-                <th className='w-1/3 text-left text-xl'>Solde</th>
+                <th className='w-1/3 text-xl text-slate-100'>Entrées</th>
+                <th className='w-1/3 text-xl text-slate-100'>Sorties</th>
+                <th className='w-1/3 text-xl text-slate-100'>Solde</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-            <td className='bg-green-200 px-4 py-2'>{inAmount()} FCFA</td>
-            <td className='bg-red-200 px-4 py-2'>{outAmount()} FCFA</td>
-            <td className='bg-blue-200 px-4 py-2'>{solde()} FCFA</td>
+            <td className='text-center text-xl font-bold text-green-300 py-2'>{inAmount()} FCFA</td>
+            <td className='text-center text-xl font-bold text-red-300 py-2'>{outAmount()} FCFA</td>
+            <td className='text-center text-xl font-bold text-blue-300 py-2'>{solde()} FCFA</td>
             </tr>
         </tbody>
         </table>
